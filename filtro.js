@@ -8,30 +8,36 @@ const productos = [
   {nombre: "Zapato rojo", tipo: "zapato", color: "rojo", img: "./zapato-rojo.jpg"}
 ]
 
-const li = document.getElementsByName("lista-de-productos")
-const $i = document.querySelector('.input');
 
-for (let i = 0; i < productos.length; i++) {
-  var d = document.createElement("div")
-  d.classList.add("producto")
+const $i = document.querySelector("input"); //se le quita el punto al input AQUI CAPTURO TODO LO QUE INGRESA EL USUARIO
+const li = document.getElementById("lista-de-productos") //CAMBIAMOS A QUERY SELECTOR, PORQUE TENEMOS UN ID Y NO UN NAME - AQUI IRAN MIS PRODUCTOS
 
-  var ti = document.createElement("p")
-  ti.classList.add("titulo")
+for (let i = 0; i < productos.length; i++) { //crea un div para cada producto
+  let d = document.createElement("div"); // d es el padre
+  d.classList.add("producto"); //agrega producto a d
+
+  let ti = document.createElement("p") //crea un elemento p que servirá como título
+  ti.classList.add("titulo") //agrega titulo al parráfo creado
   ti.textContent = productos[i].nombre
   
-  var imagen = document.createElement("img");
+  let imagen = document.createElement("img"); //crea un elemento img que se le asignará la imagen
   imagen.setAttribute('src', productos[i].img);
 
-  d.appendChild(ti)
+  d.appendChild(ti) //se agrega el titulo y la imagen dentro del div que presenta el producto
   d.appendChild(imagen)
 
   li.appendChild(d)
 }
 
-displayProductos(productos)
-const botonDeFiltro = document.querySelector("button");
+
+const displayProductos = () =>{
+  return li;
+}
+
+const botonDeFiltro = document.querySelector("button"); //accede al primer button que vea y lo guarda en boton de filtro
 
 botonDeFiltro.onclick = function() {
+  
   while (li.firstChild) {
     li.removeChild(li.firstChild);
   }
