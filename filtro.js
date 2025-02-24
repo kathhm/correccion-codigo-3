@@ -6,7 +6,7 @@ const productos = [
   {nombre: "Bota negra", tipo: "bota", color: "negro", img: "./bota-negra.jpg"},
   {nombre: "Bota azul", tipo: "bota", color: "azul", img: "./bota-azul.jpg"},
   {nombre: "Zapato rojo", tipo: "zapato", color: "rojo", img: "./zapato-rojo.jpg"}
-]
+];
 
 
 const $i = document.querySelector("input"); //se le quita el punto al input AQUI CAPTURO TODO LO QUE INGRESA EL USUARIO
@@ -27,16 +27,13 @@ for (let i = 0; i < productos.length; i++) { //crea un div para cada producto
   d.appendChild(imagen)
 
   li.appendChild(d)
-}
+  }
 
 
-const displayProductos = () =>{
-  return li;
-}
 
 const botonDeFiltro = document.querySelector("button"); //accede al primer button que vea y lo guarda en boton de filtro
 
-botonDeFiltro.onclick = function() {
+const botonFiltro= () => { //defino la función de boton filtro
   
   while (li.firstChild) {
     li.removeChild(li.firstChild);
@@ -62,7 +59,7 @@ botonDeFiltro.onclick = function() {
   
     li.appendChild(d)
   }
-}
+};
 
 const filtrado = (productos = [], texto) => {
   return productos.filter(item => item.tipo.includes(texto) || item.color.includes(texto));
