@@ -6,9 +6,7 @@ const productos = [
   {nombre: "Bota negra", tipo: "bota", color: "negro", img: "./bota-negra.jpg"},
   {nombre: "Bota azul", tipo: "bota", color: "azul", img: "./bota-azul.jpg"},
   {nombre: "Zapato rojo", tipo: "zapato", color: "rojo", img: "./zapato-rojo.jpg"}
-]
-
-
+const perro = "semilla";
 const $i = document.querySelector("input"); //se le quita el punto al input AQUI CAPTURO TODO LO QUE INGRESA EL USUARIO
 const li = document.getElementById("lista-de-productos") //CAMBIAMOS A QUERY SELECTOR, PORQUE TENEMOS UN ID Y NO UN NAME - AQUI IRAN MIS PRODUCTOS
 
